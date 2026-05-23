@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lost Time Windows Companion</title>
+  <meta name="description" content="Download and set up the local-first Windows companion for Lost Time.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #1d1c22;
+      --band: #25232b;
+      --panel: #312d39;
+      --panel-2: #443f4c;
+      --text: #f8f7fa;
+      --muted: #cdc6d4;
+      --accent: #ff5c6c;
+      --success: #8bd6a8;
+      --notice: #ffc771;
+      --link: #9fd8ff;
+      --border: #7e768c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    header {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(255, 92, 108, 0.22);
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 62px);
+      letter-spacing: 0;
+      line-height: 1.02;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    code {
+      color: var(--success);
+    }
+
+    .lead {
+      max-width: 780px;
+      font-size: 20px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0 0;
+    }
+
+    .summary-item,
+    .panel,
+    .step {
+      border: 1px solid rgba(126, 118, 140, 0.45);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .summary-item {
+      padding: 16px;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(126, 118, 140, 0.28);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      background: var(--panel-2);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 16px;
+      padding: 16px;
+      border-left: 4px solid var(--notice);
+      background: rgba(255, 199, 113, 0.08);
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(126, 118, 140, 0.35);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      main {
+        padding: 32px 0;
+      }
+
+      .summary,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-top: 24px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand">
+        <img class="logo" src="./assets/lost-time-logo.svg" alt="Lost Time logo" width="58" height="58">
+        <div>
+          <strong>Lost Time</strong>
+          <p>Windows Companion</p>
+        </div>
+      </div>
+
+      <h1>Sync Windows app usage with Lost Time.</h1>
+      <p class="lead">
+        Download the Windows Companion, pair it once with Lost Time on Android, and keep local app-usage
+        aggregates syncing over your own network.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="https://github.com/qedxyzyt-dot/qedxyzyt-dot.github.io/releases/latest/download/LostTime.WindowsCompanion.exe">
+          Download .exe for Windows
+        </a>
+        <a class="button secondary" href="https://github.com/qedxyzyt-dot/qedxyzyt-dot.github.io/releases">
+          View releases
+        </a>
+      </div>
+
+      <div class="summary" aria-label="Companion summary">
+        <div class="summary-item">
+          <strong>Windows 10/11 x64</strong>
+          <p>Portable self-contained executable. No .NET install is required.</p>
+        </div>
+        <div class="summary-item">
+          <strong>Starts with Windows</strong>
+          <p>The companion registers itself as soon as the executable opens for the first time.</p>
+        </div>
+        <div class="summary-item">
+          <strong>QR only when needed</strong>
+          <p>After pairing, it runs from the tray without reopening the QR window at startup.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>What the download includes</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>The companion app</h3>
+          <p><code>LostTime.WindowsCompanion.exe</code> monitors foreground Windows apps and exposes a local sync endpoint.</p>
+        </div>
+        <div class="panel">
+          <h3>Local storage</h3>
+          <p>Pairing data and usage aggregates are stored under <code>%LOCALAPPDATA%\LostTime\WindowsCompanion</code>.</p>
+        </div>
+        <div class="panel">
+          <h3>Tray controls</h3>
+          <p>Use the tray icon to reopen status, refresh pairing, open the data folder, or quit the companion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>First setup</h2>
+      <div class="steps">
+        <div class="step">
+          <p>Download <code>LostTime.WindowsCompanion.exe</code> and move it to a folder you will keep, such as your Apps folder or another permanent location.</p>
+        </div>
+        <div class="step">
+          <p>Run <code>LostTime.WindowsCompanion.exe</code>. On this first launch, it enables Start with Windows for your current user. Windows may show SmartScreen while builds are unsigned; choose to run it if you downloaded it from the official release link above.</p>
+        </div>
+        <div class="step">
+          <p>In Lost Time on Android, open paired devices and scan the QR code shown by the companion. Keep both devices on the same Wi-Fi or local network.</p>
+        </div>
+        <div class="step">
+          <p>Close or minimize the companion window. Monitoring continues from the Windows tray, and future Windows startups do not reopen the QR window once pairing exists.</p>
+        </div>
+      </div>
+      <p class="callout">
+        The companion automatically adds itself to the current user's Windows startup. If you move the executable later,
+        open it once from the new folder so Windows can update the startup path.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Privacy and network behavior</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>Collected</h3>
+          <p>Foreground process name, display name when available, daily total time, open count, and app icon metadata.</p>
+        </div>
+        <div class="panel">
+          <h3>Not collected</h3>
+          <p>No screenshots, keystrokes, typed text, URLs, file paths, browser contents, or window titles.</p>
+        </div>
+        <div class="panel">
+          <h3>Local sync</h3>
+          <p>Android connects to the companion on your local network using the secret created during pairing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>If Android cannot pair, confirm both devices are on the same network and Windows Firewall allows the companion on private networks.</li>
+        <li>If syncing stops after reboot, open the companion once and confirm the tray icon appears; this refreshes the startup registration.</li>
+        <li>If you need to pair another phone, open the tray menu and choose to refresh the pairing QR.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Lost Time Windows Companion is local-first companion software for Lost Time. Unsigned early builds can trigger
+      Windows SmartScreen until production releases are code-signed.
+    </footer>
+  </main>
+</body>
+</html>
