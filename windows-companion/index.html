@@ -88,6 +88,10 @@
       color: var(--link);
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     code {
       color: var(--success);
     }
@@ -117,6 +121,12 @@
       font-weight: 700;
     }
 
+    button.button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
     .button.secondary {
       background: transparent;
       border: 1px solid var(--border);
@@ -131,6 +141,7 @@
     }
 
     .summary-item,
+    .handoff,
     .panel,
     .step {
       border: 1px solid rgba(126, 118, 140, 0.45);
@@ -201,6 +212,26 @@
       color: var(--muted);
     }
 
+    .handoff {
+      display: grid;
+      gap: 12px;
+      max-width: 780px;
+      padding: 18px;
+      border-color: rgba(255, 199, 113, 0.55);
+      background: rgba(255, 199, 113, 0.08);
+    }
+
+    .handoff strong {
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .copy-status {
+      min-height: 20px;
+      color: var(--success);
+      font-size: 14px;
+    }
+
     ul {
       margin: 10px 0 0;
       padding-left: 20px;
@@ -255,6 +286,19 @@
         Download the Windows Companion, pair it once with Lost Time on Android, and keep local app-usage
         aggregates syncing over your own network.
       </p>
+
+      <div class="handoff" data-mobile-handoff hidden>
+        <strong>Opening this from your phone?</strong>
+        <p>
+          Send this page to your Windows PC, then download the companion there. Short PC link:
+          <a href="https://qedxyzyt-dot.github.io/pc/">qedxyzyt-dot.github.io/pc</a>
+        </p>
+        <div class="actions">
+          <button class="button" type="button" data-share-pc-link>Share PC link</button>
+          <button class="button secondary" type="button" data-copy-pc-link>Copy PC link</button>
+        </div>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+      </div>
 
       <div class="actions">
         <a class="button" href="https://github.com/qedxyzyt-dot/qedxyzyt-dot.github.io/releases/latest/download/LostTime.WindowsCompanion.exe">
@@ -358,5 +402,52 @@
       Windows SmartScreen until production releases are code-signed.
     </footer>
   </main>
+  <script>
+    (() => {
+      const pcLink = "https://qedxyzyt-dot.github.io/pc/";
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const handoff = document.querySelector("[data-mobile-handoff]");
+      const shareButton = document.querySelector("[data-share-pc-link]");
+      const copyButton = document.querySelector("[data-copy-pc-link]");
+      const status = document.querySelector("[data-copy-status]");
+
+      if (isMobile && handoff) {
+        handoff.hidden = false;
+      }
+
+      const setStatus = (message) => {
+        if (status) {
+          status.textContent = message;
+        }
+      };
+
+      const copyPcLink = async () => {
+        try {
+          await navigator.clipboard.writeText(pcLink);
+          setStatus("Copied. Open this link on your Windows PC.");
+        } catch {
+          setStatus(pcLink);
+        }
+      };
+
+      copyButton?.addEventListener("click", copyPcLink);
+      shareButton?.addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: "Lost Time Windows Companion",
+              text: "Open this on your Windows PC to download Lost Time Windows Companion.",
+              url: pcLink
+            });
+            setStatus("Link shared.");
+            return;
+          } catch {
+            // Fall back to copy when the share sheet is dismissed or unavailable.
+          }
+        }
+        await copyPcLink();
+      });
+    })();
+  </script>
 </body>
 </html>
