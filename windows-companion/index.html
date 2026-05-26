@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lost Time Windows Companion</title>
-  <meta name="description" content="Download and set up the local-first Windows companion for Lost Time.">
+  <meta name="description" content="Download the Windows .exe and set up the local-first Windows companion for Lost Time.">
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="./assets/lost-time-logo.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
@@ -137,6 +137,13 @@
       color: var(--text);
     }
 
+    .button.disabled {
+      pointer-events: none;
+      background: transparent;
+      border: 1px solid rgba(126, 118, 140, 0.55);
+      color: var(--muted);
+    }
+
     .summary {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -236,6 +243,23 @@
       font-size: 14px;
     }
 
+    .platform-status {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(139, 214, 168, 0.14);
+      color: var(--success);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .platform-status.planned {
+      background: rgba(255, 199, 113, 0.12);
+      color: var(--notice);
+    }
+
     ul {
       margin: 10px 0 0;
       padding-left: 20px;
@@ -285,10 +309,10 @@
         </div>
       </div>
 
-      <h1>Sync Windows app usage with Lost Time.</h1>
+      <h1>Download the Windows companion for Lost Time.</h1>
       <p class="lead">
-        Download the Windows Companion, pair it once with Lost Time on Android, and keep local app-usage
-        aggregates syncing over your own network.
+        Download the Windows 10/11 x64 .exe, pair it once with Lost Time on Android, and keep local
+        app-usage aggregates syncing over your own network.
       </p>
 
       <div class="handoff" data-mobile-handoff hidden>
@@ -304,20 +328,50 @@
         <p class="copy-status" data-copy-status aria-live="polite"></p>
       </div>
 
+      <div class="handoff" data-linux-note hidden>
+        <strong>Using Linux?</strong>
+        <p>
+          A native Linux companion is planned, but this release is a Windows 10/11 x64 .exe.
+          It will not monitor Linux desktops natively.
+        </p>
+      </div>
+
       <div class="actions">
         <a class="button" href="https://github.com/qedxyzyt-dot/qedxyzyt-dot.github.io/releases/latest/download/LostTime.WindowsCompanion.exe">
-          Download .exe for Windows
+          Download Windows .exe
         </a>
+        <span class="button disabled" aria-disabled="true">Linux build planned</span>
         <a class="button secondary" href="https://github.com/qedxyzyt-dot/qedxyzyt-dot.github.io/releases">
           View releases
         </a>
       </div>
 
       <p class="callout">
-        Open this page on your Windows PC before downloading. The button downloads the latest
+        Open this page on your Windows PC before downloading. The button downloads the latest Windows
         self-contained <code>LostTime.WindowsCompanion.exe</code> published for Lost Time.
-        Latest Windows Companion version: <strong>1.1.6</strong>.
+        Latest Windows Companion version: <strong>1.1.7</strong>.
       </p>
+
+      <section class="section" aria-label="Available computer versions">
+        <h2>Computer versions</h2>
+        <div class="grid">
+          <div class="panel">
+            <span class="platform-status">Available now</span>
+            <h3>Windows 10/11 x64</h3>
+            <p>Use <code>LostTime.WindowsCompanion.exe</code> on Windows PCs and notebooks.</p>
+          </div>
+          <div class="panel">
+            <span class="platform-status planned">Planned</span>
+            <h3>Linux</h3>
+            <p>A native Linux companion needs separate foreground-app, autostart, tray, icon, and packaging adapters.</p>
+          </div>
+          <div class="panel">
+            <span class="platform-status planned">Not this file</span>
+            <h3>Other systems</h3>
+            <p>The Windows .exe is not intended for macOS, Linux, Android, or ChromeOS.</p>
+          </div>
+        </div>
+      </section>
 
       <div class="summary" aria-label="Companion summary">
         <div class="summary-item">
@@ -411,13 +465,19 @@
     (() => {
       const pcLink = "https://qedxyzyt-dot.github.io/pc/";
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const isLinuxDesktop = /Linux/i.test(navigator.userAgent) && !/Android/i.test(navigator.userAgent);
       const handoff = document.querySelector("[data-mobile-handoff]");
+      const linuxNote = document.querySelector("[data-linux-note]");
       const shareButton = document.querySelector("[data-share-pc-link]");
       const copyButton = document.querySelector("[data-copy-pc-link]");
       const status = document.querySelector("[data-copy-status]");
 
       if (isMobile && handoff) {
         handoff.hidden = false;
+      }
+
+      if (isLinuxDesktop && linuxNote) {
+        linuxNote.hidden = false;
       }
 
       const setStatus = (message) => {
