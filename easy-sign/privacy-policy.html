@@ -13,48 +13,100 @@
 <body>
   <main>
     <h1>Easy Sign Privacy Policy</h1>
-    <p class="meta">Effective date: August 9, 2026</p>
+    <p class="meta">Effective date: August 14, 2026</p>
 
-    <p>Easy Sign is designed to sign PDF documents locally on the user's Android device. This policy explains how the app accesses and handles data.</p>
+    <p>Easy Sign is designed to sign and verify PDF documents locally on the user's Android device. This policy explains how the app accesses and handles data, including its optional signing-security features.</p>
 
     <h2>Data processed on the device</h2>
-    <p>Easy Sign may access PDF documents selected by the user, handwritten strokes, saved signature presets, temporary exported PDFs, and recovery drafts. These items are processed locally on the device.</p>
+    <p>Easy Sign may process PDF documents selected by the user, handwritten strokes, saved signature presets, temporary exported PDFs, recovery drafts, public digital-certificate data, and optional signing credentials selected by the user. Certificate metadata can contain civil-identity information such as a name, CPF, CNPJ, or the responsible person's identity. These items are processed locally on the device.</p>
 
     <h2>No off-device collection</h2>
-    <p>Easy Sign does not transmit documents, signatures, device identifiers, analytics data, advertising data, or other user data to Easy Sign servers or to third-party servers. The app does not require an account and does not include advertising or analytics SDKs.</p>
+    <p>Easy Sign does not transmit documents, handwritten signatures, certificate files, certificate passwords, CPF/CNPJ data, biometric data, device identifiers, analytics data, advertising data, or other user data to Easy Sign servers or to third-party servers. The app does not require an account and does not include advertising or analytics SDKs. The app does not request the Android INTERNET permission.</p>
 
-    <h2>PDF access</h2>
-    <p>PDF files are opened only after the user selects them through Android's system file picker. Easy Sign does not request broad storage access.</p>
+    <h2>PDF and certificate access</h2>
+    <p>PDF and P12/PFX files are opened only after the user selects them through Android's system file picker. Easy Sign does not request broad storage access.</p>
 
-    <h2>Local security</h2>
-    <p>Saved signature presets and recovery drafts are stored in the app's private storage. Sensitive local catalog and draft data are protected using AES-GCM encryption with keys maintained by Android Keystore. Android backup is disabled for the app.</p>
+    <h2>Saved signatures and recovery drafts</h2>
+    <p>Saved handwritten-signature presets and recovery drafts are stored in the app's private storage. Sensitive local catalog and draft data are protected with AES-GCM encryption using keys maintained by Android Keystore. Android backup is disabled for the app.</p>
+
+    <h2>Optional P12/PFX credentials — Brazil only</h2>
+    <p>The P12/PFX / ICP-Brasil flow is exposed only when Easy Sign resolves the device region as Brazil. The app uses the current mobile-network country when available, then the SIM country, and only falls back to the configured device/app region when telephony metadata is unavailable; it does not request GPS or a location permission for this check. If the user chooses to import a P12/PFX signing credential, Easy Sign first validates that the supplied password can open a usable private-key entry. The app then stores an additional AES-GCM-encrypted copy of the already password-protected credential in private app storage. The P12/PFX password is never persisted and is requested again when the credential is used. Its private key is decrypted only transiently in app memory for the requested signing operation and is not written separately to storage.</p>
+
+    <h2>Protected device signing and biometrics</h2>
+    <p>On supported Android versions and devices, Easy Sign can create a signing key in Android Keystore and require strong device authentication for each protected signing operation. The private key is non-exportable through the Android Keystore API and may be hardware-backed when the device supports it.</p>
+    <p>Easy Sign does not receive or store fingerprints, face images, biometric templates, or biometric embeddings. Android displays and processes the system authentication prompt. Easy Sign receives only the result and, when authentication succeeds, authorization to perform the cryptographic signing operation.</p>
+
+    <h2>Local digital-signature verification</h2>
+    <p>Easy Sign can locally verify cryptographic PDF signature integrity, certificate metadata, supported ICP-Brasil trust chains, and supported signature-policy information. Because these operations are intentionally performed without Internet access, Easy Sign does not claim that a certificate's current revocation status has been checked against fresh CRL or OCSP data. That limitation is shown to the user.</p>
 
     <h2>Exports and sharing</h2>
-    <p>Temporary exported PDFs are stored in the app cache so the user can share them. Sharing occurs only when the user chooses Export and selects a receiving app through Android's share interface. After a file is handed to a receiving app, that app handles the file under its own privacy terms.</p>
+    <p>Temporary exported or digitally signed PDFs are stored in the app cache so the user can share them. Sharing occurs only when the user explicitly selects a receiving app through Android's share interface. After a file is handed to another app, that app handles the file under its own privacy terms.</p>
+
+    <h2>Signed originals</h2>
+    <p>If an imported PDF already contains a cryptographic digital signature, Easy Sign opens it read-only by default. The user may explicitly choose to edit a new exported copy. Easy Sign does not overwrite the signed source file.</p>
 
     <h2>Retention and deletion</h2>
-    <p>Saved signatures remain on the device until the user deletes them, clears Easy Sign's app data, or uninstalls the app. Recovery drafts are local recovery data and are replaced as the current document changes. Temporary export files are cache data and may be removed by Android or when the app's data is cleared.</p>
+    <p>Saved handwritten signatures remain until the user deletes them, clears app data, or uninstalls Easy Sign. A stored P12/PFX credential remains only until the user removes it, clears app data, or uninstalls the app. Recovery drafts are replaced as the current session changes. Temporary export files are cache data and may be removed by Android or when app data is cleared. Resetting a protected device key removes that local private key from Android Keystore; already signed PDFs remain separate files containing the public verification material required by their signature format.</p>
 
     <h2>Third-party software</h2>
-    <p>Easy Sign uses open-source PDF and cryptography libraries for local document processing. The app does not grant itself Internet access for those libraries to transmit user documents or signatures.</p>
+    <p>Easy Sign uses open-source PDF and cryptography libraries for local processing. Those libraries do not receive Internet permission from Easy Sign to transmit user documents, credentials, signatures, or biometric data.</p>
 
     <h2>Children</h2>
-    <p>Easy Sign does not knowingly collect personal information from children or from any other users because it does not transmit user data off the device.</p>
+    <p>Easy Sign is not designed for children and does not transmit personal information from children or other users to Easy Sign servers.</p>
 
     <h2>Changes to this policy</h2>
-    <p>If Easy Sign's data practices change, this policy and the Google Play Data safety declaration will be updated before those changes are distributed.</p>
+    <p>If Easy Sign's data practices change, this same policy page and the Google Play Data safety declaration will be updated before those changes are distributed. Prior versions remain available through the page's source-control history.</p>
 
     <h2>Contact</h2>
     <p>For privacy questions, contact QED at <a href="mailto:qed.xyz.yt@gmail.com">qed.xyz.yt@gmail.com</a>.</p>
 
     <section class="lang" lang="pt-BR">
       <h1>Política de Privacidade do Easy Sign</h1>
-      <p class="meta">Vigência: 9 de agosto de 2026</p>
-      <p>O Easy Sign foi projetado para assinar documentos PDF localmente no dispositivo Android do usuário. PDFs selecionados, traços manuscritos, assinaturas salvas, PDFs exportados temporariamente e rascunhos de recuperação são processados no próprio aparelho.</p>
-      <p>O Easy Sign não transmite documentos, assinaturas, identificadores do dispositivo, dados de análise, publicidade ou outros dados do usuário para servidores do Easy Sign ou de terceiros. O app não exige conta e não contém publicidade nem SDKs de análise.</p>
-      <p>Os PDFs só são abertos após seleção pelo seletor de arquivos do Android. Assinaturas salvas e rascunhos de recuperação ficam no armazenamento privado do aplicativo e são protegidos com AES-GCM e chaves mantidas pelo Android Keystore. O backup do Android está desativado.</p>
-      <p>O compartilhamento ocorre somente quando o usuário escolhe Exportar e seleciona um aplicativo de destino. Depois disso, o aplicativo escolhido passa a tratar o arquivo segundo seus próprios termos de privacidade.</p>
-      <p>Assinaturas salvas permanecem no aparelho até serem excluídas pelo usuário, até que os dados do Easy Sign sejam apagados ou até a desinstalação. Arquivos temporários de exportação ficam no cache e podem ser removidos pelo Android.</p>
+      <p class="meta">Vigência: 14 de agosto de 2026</p>
+
+      <p>O Easy Sign foi projetado para assinar e verificar documentos PDF localmente no dispositivo Android do usuário. Esta política explica como o aplicativo acessa e trata dados, incluindo seus recursos opcionais de segurança de assinatura.</p>
+
+      <h2>Dados processados no dispositivo</h2>
+      <p>O Easy Sign pode processar PDFs selecionados pelo usuário, traços manuscritos, assinaturas salvas, PDFs exportados temporariamente, rascunhos de recuperação, dados públicos de certificados digitais e credenciais de assinatura opcionais selecionadas pelo usuário. Os metadados de um certificado podem conter informações de identidade civil, como nome, CPF, CNPJ ou a identidade da pessoa responsável. Esses dados são processados localmente no aparelho.</p>
+
+      <h2>Nenhuma coleta fora do dispositivo</h2>
+      <p>O Easy Sign não transmite documentos, assinaturas manuscritas, arquivos de certificado, senhas de certificado, CPF/CNPJ, dados biométricos, identificadores do aparelho, dados de análise, publicidade ou outros dados do usuário para servidores do Easy Sign ou de terceiros. O app não exige conta, não inclui publicidade nem SDKs de análise e não solicita a permissão INTERNET do Android.</p>
+
+      <h2>Acesso a PDFs e certificados</h2>
+      <p>Arquivos PDF e P12/PFX só são abertos depois que o usuário os seleciona pelo seletor de arquivos do Android. O Easy Sign não solicita acesso amplo ao armazenamento.</p>
+
+      <h2>Assinaturas salvas e rascunhos</h2>
+      <p>Presets de assinatura manuscrita e rascunhos de recuperação ficam no armazenamento privado do app. Dados locais sensíveis do catálogo e dos rascunhos são protegidos com AES-GCM e chaves mantidas pelo Android Keystore. O backup do Android está desativado para o aplicativo.</p>
+
+      <h2>Credenciais P12/PFX opcionais — somente Brasil</h2>
+      <p>O fluxo P12/PFX / ICP-Brasil é exibido somente quando o Easy Sign resolve a região do dispositivo como Brasil. O app usa primeiro o país da rede móvel atual, depois o país da SIM e só recorre à região configurada no dispositivo/app quando não há metadados de telefonia disponíveis; não solicita GPS nem permissão de localização para essa verificação. Ao importar uma credencial P12/PFX, o Easy Sign primeiro valida se a senha informada abre uma entrada utilizável de chave privada. Depois, guarda no armazenamento privado uma cópia adicional cifrada com AES-GCM da credencial que já é protegida pela própria senha. A senha do P12/PFX nunca é persistida e é solicitada novamente a cada uso. A chave privada é descriptografada apenas temporariamente na memória para a operação de assinatura solicitada e não é gravada separadamente no armazenamento.</p>
+
+      <h2>Assinatura protegida e biometria</h2>
+      <p>Em versões e dispositivos Android compatíveis, o Easy Sign pode criar uma chave de assinatura no Android Keystore e exigir autenticação forte do dispositivo a cada operação de assinatura protegida. A chave privada não é exportável pela API do Android Keystore e pode ser protegida por hardware quando o aparelho oferecer suporte.</p>
+      <p>O Easy Sign não recebe nem armazena impressões digitais, imagens faciais, templates biométricos ou embeddings biométricos. O Android exibe e processa a autenticação do sistema. O Easy Sign recebe somente o resultado e, quando a autenticação é aprovada, a autorização para executar a operação criptográfica.</p>
+
+      <h2>Verificação local de assinaturas digitais</h2>
+      <p>O Easy Sign pode verificar localmente a integridade criptográfica de assinaturas PDF, metadados do certificado, cadeias ICP-Brasil suportadas e informações de política de assinatura suportadas. Como essas operações são realizadas deliberadamente sem acesso à Internet, o Easy Sign não afirma que o estado atual de revogação do certificado foi consultado em dados recentes de LCR ou OCSP. Essa limitação é informada ao usuário.</p>
+
+      <h2>Exportação e compartilhamento</h2>
+      <p>PDFs exportados ou assinados digitalmente ficam temporariamente no cache do aplicativo para compartilhamento. O compartilhamento só ocorre quando o usuário escolhe explicitamente um aplicativo de destino pelo seletor do Android. A partir daí, o aplicativo receptor trata o arquivo segundo seus próprios termos de privacidade.</p>
+
+      <h2>Originais já assinados</h2>
+      <p>Quando um PDF importado já contém assinatura digital criptográfica, o Easy Sign o abre em modo somente leitura por padrão. O usuário pode optar explicitamente por editar uma nova cópia exportada. O arquivo assinado de origem não é sobrescrito.</p>
+
+      <h2>Retenção e exclusão</h2>
+      <p>Assinaturas manuscritas salvas permanecem até serem removidas pelo usuário, até a limpeza dos dados do app ou até a desinstalação. Uma credencial P12/PFX armazenada permanece somente até o usuário removê-la, limpar os dados ou desinstalar o app. Rascunhos são substituídos conforme a sessão muda. Exportações temporárias ficam no cache. Redefinir a chave protegida remove aquela chave privada local do Android Keystore; PDFs já assinados permanecem arquivos independentes com o material público de verificação previsto pelo formato de assinatura.</p>
+
+      <h2>Software de terceiros</h2>
+      <p>O Easy Sign utiliza bibliotecas de código aberto para processamento local de PDF e criptografia. Essas bibliotecas não recebem permissão de Internet do Easy Sign para transmitir documentos, credenciais, assinaturas ou dados biométricos.</p>
+
+      <h2>Crianças</h2>
+      <p>O Easy Sign não é direcionado a crianças e não transmite informações pessoais de crianças ou de outros usuários para servidores do Easy Sign.</p>
+
+      <h2>Alterações nesta política</h2>
+      <p>Se as práticas de dados do Easy Sign mudarem, esta mesma página de política e a declaração de Segurança dos dados do Google Play serão atualizadas antes da distribuição dessas mudanças. As versões anteriores permanecem disponíveis no histórico de controle de versão da página.</p>
+
+      <h2>Contato</h2>
       <p>Para dúvidas sobre privacidade, entre em contato com a QED pelo e-mail <a href="mailto:qed.xyz.yt@gmail.com">qed.xyz.yt@gmail.com</a>.</p>
     </section>
   </main>
