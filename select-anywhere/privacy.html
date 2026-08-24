@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Select Anywhere Privacy Policy.">
+  <title>Privacy Policy · Select Anywhere</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav class="shell" aria-label="Primary navigation">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><span></span></span> Select Anywhere</a>
+    <div class="navlinks"><a href="index.html">Home</a><a href="support.html">Support</a><a href="#pt-br">Português</a></div>
+  </nav>
+</header>
+
+<main class="shell policy">
+  <div class="eyebrow">Version 0.1.0 · Effective August 24, 2026</div>
+  <h1>Privacy Policy</h1>
+  <p>This policy describes how the current Android version of Select Anywhere handles data. It will be updated before any public release that materially changes collection, sharing, or processing.</p>
+
+  <h2>1. What Select Anywhere does</h2>
+  <p>Select Anywhere lets you select and copy visible text in other Android apps when those apps do not provide usable native text selection. You explicitly start a selection through Android’s Accessibility button or shortcut.</p>
+
+  <h2>2. Accessibility Service</h2>
+  <p>Select Anywhere uses an Android <code>AccessibilityService</code> that you enable manually in Android Settings.</p>
+  <p>The service is used to receive your explicit Accessibility-button or shortcut request, inspect visible text and UI structure in the current app, and draw a temporary capture/selection interface while that session is active. Select Anywhere does not keep a permanent floating trigger over other apps in the shipping version.</p>
+  <p>When the source app does not provide usable character geometry, Select Anywhere may analyze a temporary image of the current app window locally on the device after you start a selection. That image is not saved, uploaded, or added to History and is discarded after recognition.</p>
+  <p>Select Anywhere does not use Accessibility access to autonomously interact with other apps on your behalf.</p>
+
+  <h2>3. Data stored locally</h2>
+  <p>When you confirm a selection, Select Anywhere may store the following in its private local app storage:</p>
+  <ul>
+    <li>the text you explicitly selected;</li>
+    <li>the package identifier of the source app;</li>
+    <li>the date and time of the capture.</li>
+  </ul>
+  <p>Recognized URLs are derived locally from the saved text so you can open them later. The confirmed text is also placed on the Android clipboard when you choose to copy it.</p>
+
+  <h2>4. Data Select Anywhere does not collect as app content</h2>
+  <p>Select Anywhere 0.1.0 does not collect or upload your selected text, screenshots, OCR output, Accessibility structure, local History, contacts, precise or approximate location, microphone/audio data, camera data, photos, videos, or general files to Select Anywhere servers. The app does not continuously record the screen.</p>
+
+  <h2>5. Network access and Google ML Kit technical metrics</h2>
+  <p>The Select Anywhere 0.1.0 app manifest does not request the Android <code>INTERNET</code> or <code>ACCESS_NETWORK_STATE</code> permissions. Select Anywhere does not operate its own backend, analytics, advertising, or synchronization service in this release.</p>
+  <p>Visual text recognition uses the bundled Google ML Kit text-recognition SDK. OCR image content, recognized text, and OCR results are processed on the device and are not sent to Select Anywhere servers.</p>
+  <p>Google documents that ML Kit may collect technical SDK diagnostics and usage metrics for analysis and reliability. Depending on the SDK/runtime, these metrics may include device and app information, an installation identifier, latency/performance data, API or feature configuration/version information, input/output size metadata, event types such as initialization or detection, and error codes. Google documents that image/text content and ML output are not included in this telemetry, that these technical metrics are encrypted in transit, and that they are not transferred to third parties by ML Kit.</p>
+
+  <h2>6. Advertising, accounts, billing and synchronization</h2>
+  <p>Select Anywhere 0.1.0 has no ads, no AdMob integration, no account/login system, no subscription or in-app billing, and no cloud synchronization. If a future release adds any of these capabilities, this policy and the Google Play Data safety declaration will be updated before distribution.</p>
+
+  <h2>7. Backup</h2>
+  <p>Automatic Android backup is disabled for Select Anywhere 0.1.0. Local History is treated as device-local data.</p>
+
+  <h2>8. Clipboard and opening links</h2>
+  <p>When you choose Copy, the selected text is placed on the Android clipboard. Clipboard behavior is controlled by Android and may make copied text available to other apps according to the rules of the installed Android version.</p>
+  <p>When you choose Open for a recognized URL, Android routes that URL to an appropriate destination app or browser. The receiving app or website then handles the URL under its own privacy terms.</p>
+
+  <h2>9. Retention and deletion</h2>
+  <p>History remains in the app’s private local storage until you delete individual items, clear History from Select Anywhere Settings, clear the app’s data in Android Settings, or uninstall the app.</p>
+
+  <h2>10. Children</h2>
+  <p>Select Anywhere is a general productivity utility and is not designed or marketed for children.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>If Select Anywhere’s data practices change, this page and the corresponding Google Play disclosures will be updated before the changed behavior is distributed. Prior policy versions remain visible through the public source-control history of this page.</p>
+
+  <h2>12. Contact</h2>
+  <p>For privacy or support questions, contact QED at <a href="mailto:qed.xyz.yt@gmail.com">qed.xyz.yt@gmail.com</a>.</p>
+
+  <section id="pt-br" lang="pt-BR">
+    <div class="eyebrow">Versão 0.1.0 · Vigência em 24 de agosto de 2026</div>
+    <h1>Política de Privacidade</h1>
+    <p>Esta política descreve como a versão atual do Select Anywhere para Android trata dados. Ela será atualizada antes de qualquer versão pública que altere de forma relevante a coleta, o compartilhamento ou o processamento.</p>
+
+    <h2>1. O que o Select Anywhere faz</h2>
+    <p>O Select Anywhere permite selecionar e copiar texto visível em outros aplicativos Android quando eles não oferecem seleção nativa utilizável. A seleção é iniciada explicitamente pelo botão ou atalho de Acessibilidade do Android.</p>
+
+    <h2>2. Serviço de Acessibilidade</h2>
+    <p>O Select Anywhere utiliza um <code>AccessibilityService</code> do Android que é habilitado manualmente pelo usuário nas Configurações.</p>
+    <p>O serviço é usado para receber a solicitação explícita feita pelo botão/atalho de Acessibilidade, consultar o texto e a estrutura visível da interface atual e desenhar uma camada temporária de captura/seleção enquanto aquela sessão estiver ativa. A versão distribuída não mantém gatilho flutuante permanente sobre outros aplicativos.</p>
+    <p>Quando o aplicativo de origem não fornece geometria utilizável dos caracteres, o Select Anywhere pode analisar localmente uma imagem temporária da janela atual depois que você inicia uma seleção. Essa imagem não é salva, enviada nem adicionada ao Histórico e é descartada após o reconhecimento.</p>
+    <p>O Select Anywhere não usa o acesso de Acessibilidade para agir autonomamente em outros aplicativos em nome do usuário.</p>
+
+    <h2>3. Dados armazenados localmente</h2>
+    <p>Quando uma seleção é confirmada, o Select Anywhere pode armazenar no espaço privado local do app:</p>
+    <ul>
+      <li>o texto explicitamente selecionado;</li>
+      <li>o identificador do pacote do aplicativo de origem;</li>
+      <li>a data e hora da captura.</li>
+    </ul>
+    <p>URLs reconhecidas são derivadas localmente do próprio texto salvo para que possam ser abertas posteriormente. O texto confirmado também é colocado na área de transferência do Android quando você escolhe Copiar.</p>
+
+    <h2>4. Dados que o Select Anywhere não coleta como conteúdo do app</h2>
+    <p>O Select Anywhere 0.1.0 não coleta nem envia para servidores do Select Anywhere o texto selecionado, screenshots, resultados do OCR, estrutura de Acessibilidade, Histórico local, contatos, localização aproximada ou precisa, microfone/áudio, câmera, fotos, vídeos ou arquivos gerais. O app não grava a tela continuamente.</p>
+
+    <h2>5. Rede e métricas técnicas do Google ML Kit</h2>
+    <p>O manifesto da versão 0.1.0 não solicita as permissões Android <code>INTERNET</code> ou <code>ACCESS_NETWORK_STATE</code>. O Select Anywhere não possui backend próprio, analytics próprio, publicidade nem sincronização nesta versão.</p>
+    <p>O reconhecimento visual usa o SDK Google ML Kit com modelo de reconhecimento de texto embarcado. O conteúdo da imagem, o texto reconhecido e o resultado do OCR são processados no dispositivo e não são enviados a servidores do Select Anywhere.</p>
+    <p>O Google documenta que o ML Kit pode coletar métricas técnicas de diagnóstico e uso do próprio SDK para análise e confiabilidade. Dependendo do SDK/runtime, elas podem incluir informações do dispositivo e do app, identificador por instalação, latência/desempenho, configuração/versão da API ou recurso, metadados de tamanho de entrada/saída, tipos de evento como inicialização ou detecção e códigos de erro. O Google documenta que o conteúdo da imagem/texto e o resultado de ML não fazem parte dessa telemetria, que as métricas técnicas são criptografadas em trânsito e que não são transferidas a terceiros pelo ML Kit.</p>
+
+    <h2>6. Publicidade, conta, cobrança e sincronização</h2>
+    <p>O Select Anywhere 0.1.0 não possui anúncios, AdMob, conta/login, assinatura, cobrança no app ou sincronização em nuvem. Caso uma versão futura introduza qualquer um desses recursos, esta política e a declaração de Segurança dos dados do Google Play serão atualizadas antes da distribuição.</p>
+
+    <h2>7. Backup</h2>
+    <p>O backup automático do Android está desativado no Select Anywhere 0.1.0. O Histórico é tratado como dado local do dispositivo.</p>
+
+    <h2>8. Área de transferência e abertura de links</h2>
+    <p>Quando você escolhe Copiar, o texto selecionado é colocado na área de transferência do Android. O comportamento da área de transferência é controlado pelo Android e pode disponibilizar o conteúdo copiado a outros aplicativos conforme as regras da versão instalada.</p>
+    <p>Quando você escolhe Abrir para uma URL reconhecida, o Android encaminha a URL a um aplicativo ou navegador apropriado. O aplicativo ou site de destino passa a tratar aquela URL de acordo com seus próprios termos de privacidade.</p>
+
+    <h2>9. Retenção e exclusão</h2>
+    <p>O Histórico permanece no armazenamento privado local do app até que você exclua itens individualmente, limpe o Histórico pelos Ajustes do Select Anywhere, limpe os dados do app nas Configurações do Android ou desinstale o aplicativo.</p>
+
+    <h2>10. Crianças</h2>
+    <p>O Select Anywhere é uma ferramenta geral de produtividade e não foi projetado nem comercializado para crianças.</p>
+
+    <h2>11. Alterações nesta política</h2>
+    <p>Se as práticas de dados do Select Anywhere mudarem, esta página e as declarações correspondentes no Google Play serão atualizadas antes da distribuição do comportamento alterado. Versões anteriores permanecem visíveis no histórico público de controle de versão desta página.</p>
+
+    <h2>12. Contato</h2>
+    <p>Para dúvidas de privacidade ou suporte, entre em contato com a QED pelo e-mail <a href="mailto:qed.xyz.yt@gmail.com">qed.xyz.yt@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer><div class="shell footer-row"><span>© 2026 Select Anywhere</span><span><a href="support.html">Support / Suporte</a> · <a href="index.html">Home</a></span></div></footer>
+</body>
+</html>
