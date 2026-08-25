@@ -16,7 +16,7 @@
 </header>
 
 <main class="shell policy">
-  <div class="eyebrow">Version 0.1.0 · Effective August 24, 2026</div>
+  <div class="eyebrow">Version 0.1.1 · Effective August 25, 2026</div>
   <h1>Privacy Policy</h1>
   <p>This policy describes how the current Android version of Select Anywhere handles data. It will be updated before any public release that materially changes collection, sharing, or processing.</p>
 
@@ -39,18 +39,21 @@
   <p>Recognized URLs are derived locally from the saved text so you can open them later. The confirmed text is also placed on the Android clipboard when you choose to copy it.</p>
 
   <h2>4. Data Select Anywhere does not collect as app content</h2>
-  <p>Select Anywhere 0.1.0 does not collect or upload your selected text, screenshots, OCR output, Accessibility structure, local History, contacts, precise or approximate location, microphone/audio data, camera data, photos, videos, or general files to Select Anywhere servers. The app does not continuously record the screen.</p>
+  <p>Select Anywhere 0.1.1 does not collect or upload your selected text, screenshots, OCR output, Accessibility structure, local History, contacts, precise or approximate location, microphone/audio data, camera data, photos, videos, or general files to Select Anywhere servers. The app does not continuously record the screen.</p>
 
-  <h2>5. Network access and Google ML Kit technical metrics</h2>
-  <p>The Select Anywhere 0.1.0 app manifest does not request the Android <code>INTERNET</code> or <code>ACCESS_NETWORK_STATE</code> permissions. Select Anywhere does not operate its own backend, analytics, advertising, or synchronization service in this release.</p>
-  <p>Visual text recognition uses the bundled Google ML Kit text-recognition SDK. OCR image content, recognized text, and OCR results are processed on the device and are not sent to Select Anywhere servers.</p>
-  <p>Google documents that ML Kit may collect technical SDK diagnostics and usage metrics for analysis and reliability. Depending on the SDK/runtime, these metrics may include device and app information, an installation identifier, latency/performance data, API or feature configuration/version information, input/output size metadata, event types such as initialization or detection, and error codes. Google documents that image/text content and ML output are not included in this telemetry, that these technical metrics are encrypted in transit, and that they are not transferred to third parties by ML Kit.</p>
+  <h2>5. Network access and Google SDK technical data</h2>
+  <p>Select Anywhere requests Android <code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code> access for Google AdMob and the Google User Messaging Platform (UMP). Select Anywhere does not operate its own backend or synchronization service.</p>
+  <p>Visual text recognition uses the bundled Google ML Kit text-recognition SDK. OCR image content, recognized text, OCR results, Accessibility structure, and the text you select are processed locally for the selection feature and are never attached to an advertising request.</p>
+  <p>Google documents that ML Kit may collect technical SDK diagnostics and usage metrics for analysis and reliability, such as device/app information, an installation identifier, latency/performance data, feature configuration/version information, input/output size metadata, event types, and error codes. Google documents that OCR image/text content and ML output are not included in this telemetry.</p>
+  <p>Google also documents that the Google Mobile Ads SDK automatically collects and shares data used for advertising, analytics, and fraud prevention, including IP address (which can estimate general location), product interactions, diagnostic information, and device/account identifiers. Data sent by these Google SDKs is encrypted in transit. UMP stores and communicates applicable privacy and consent choices so ad requests can respect those choices.</p>
 
   <h2>6. Advertising, accounts, billing and synchronization</h2>
-  <p>Select Anywhere 0.1.0 has no ads, no AdMob integration, no account/login system, no subscription or in-app billing, and no cloud synchronization. If a future release adds any of these capabilities, this policy and the Google Play Data safety declaration will be updated before distribution.</p>
+  <p>Select Anywhere uses Google AdMob only on screens owned by Select Anywhere, such as the local History interface. Ads are never placed in the temporary capture/selection overlay shown over another app, and selected text is never sent to AdMob or used as ad-targeting input.</p>
+  <p>Where required, Select Anywhere uses Google UMP to request or manage advertising consent. If Google indicates that a privacy-options entry point is required, Select Anywhere exposes it in Settings so you can review or change your choices later.</p>
+  <p>Select Anywhere has no account/login system, subscription or in-app billing, and no cloud synchronization in this release.</p>
 
   <h2>7. Backup</h2>
-  <p>Automatic Android backup is disabled for Select Anywhere 0.1.0. Local History is treated as device-local data.</p>
+  <p>Automatic Android backup is disabled for Select Anywhere 0.1.1. Local History is treated as device-local data.</p>
 
   <h2>8. Clipboard and opening links</h2>
   <p>When you choose Copy, the selected text is placed on the Android clipboard. Clipboard behavior is controlled by Android and may make copied text available to other apps according to the rules of the installed Android version.</p>
@@ -69,7 +72,7 @@
   <p>For privacy or support questions, contact QED at <a href="mailto:qed.xyz.yt@gmail.com">qed.xyz.yt@gmail.com</a>.</p>
 
   <section id="pt-br" lang="pt-BR">
-    <div class="eyebrow">Versão 0.1.0 · Vigência em 24 de agosto de 2026</div>
+    <div class="eyebrow">Versão 0.1.1 · Vigência em 25 de agosto de 2026</div>
     <h1>Política de Privacidade</h1>
     <p>Esta política descreve como a versão atual do Select Anywhere para Android trata dados. Ela será atualizada antes de qualquer versão pública que altere de forma relevante a coleta, o compartilhamento ou o processamento.</p>
 
@@ -92,18 +95,21 @@
     <p>URLs reconhecidas são derivadas localmente do próprio texto salvo para que possam ser abertas posteriormente. O texto confirmado também é colocado na área de transferência do Android quando você escolhe Copiar.</p>
 
     <h2>4. Dados que o Select Anywhere não coleta como conteúdo do app</h2>
-    <p>O Select Anywhere 0.1.0 não coleta nem envia para servidores do Select Anywhere o texto selecionado, screenshots, resultados do OCR, estrutura de Acessibilidade, Histórico local, contatos, localização aproximada ou precisa, microfone/áudio, câmera, fotos, vídeos ou arquivos gerais. O app não grava a tela continuamente.</p>
+    <p>O Select Anywhere 0.1.1 não coleta nem envia para servidores do Select Anywhere o texto selecionado, screenshots, resultados do OCR, estrutura de Acessibilidade, Histórico local, contatos, localização aproximada ou precisa, microfone/áudio, câmera, fotos, vídeos ou arquivos gerais. O app não grava a tela continuamente.</p>
 
-    <h2>5. Rede e métricas técnicas do Google ML Kit</h2>
-    <p>O manifesto da versão 0.1.0 não solicita as permissões Android <code>INTERNET</code> ou <code>ACCESS_NETWORK_STATE</code>. O Select Anywhere não possui backend próprio, analytics próprio, publicidade nem sincronização nesta versão.</p>
-    <p>O reconhecimento visual usa o SDK Google ML Kit com modelo de reconhecimento de texto embarcado. O conteúdo da imagem, o texto reconhecido e o resultado do OCR são processados no dispositivo e não são enviados a servidores do Select Anywhere.</p>
-    <p>O Google documenta que o ML Kit pode coletar métricas técnicas de diagnóstico e uso do próprio SDK para análise e confiabilidade. Dependendo do SDK/runtime, elas podem incluir informações do dispositivo e do app, identificador por instalação, latência/desempenho, configuração/versão da API ou recurso, metadados de tamanho de entrada/saída, tipos de evento como inicialização ou detecção e códigos de erro. O Google documenta que o conteúdo da imagem/texto e o resultado de ML não fazem parte dessa telemetria, que as métricas técnicas são criptografadas em trânsito e que não são transferidas a terceiros pelo ML Kit.</p>
+    <h2>5. Rede e dados técnicos dos SDKs do Google</h2>
+    <p>O Select Anywhere solicita acesso Android a <code>INTERNET</code> e <code>ACCESS_NETWORK_STATE</code> para o Google AdMob e a Google User Messaging Platform (UMP). O Select Anywhere não possui backend próprio nem serviço próprio de sincronização.</p>
+    <p>O reconhecimento visual usa o SDK Google ML Kit com modelo de reconhecimento de texto embarcado. O conteúdo da imagem, o texto reconhecido, o resultado do OCR, a estrutura de Acessibilidade e o texto selecionado são processados localmente para a funcionalidade de seleção e nunca são anexados a uma solicitação de anúncio.</p>
+    <p>O Google documenta que o ML Kit pode coletar métricas técnicas de diagnóstico e uso para análise e confiabilidade, como informações do dispositivo/app, identificador por instalação, latência/desempenho, configuração/versão do recurso, metadados de tamanho de entrada/saída, tipos de evento e códigos de erro. O Google documenta que o conteúdo da imagem/texto do OCR e o resultado de ML não fazem parte dessa telemetria.</p>
+    <p>O Google também documenta que o Google Mobile Ads SDK coleta e compartilha automaticamente dados usados para publicidade, análise e prevenção de fraude, incluindo endereço IP (que pode estimar localização geral), interações com o produto, informações de diagnóstico e identificadores de dispositivo/conta. Os dados enviados por esses SDKs do Google são criptografados em trânsito. A UMP armazena e comunica as escolhas de privacidade e consentimento aplicáveis para que as solicitações de anúncio respeitem essas escolhas.</p>
 
     <h2>6. Publicidade, conta, cobrança e sincronização</h2>
-    <p>O Select Anywhere 0.1.0 não possui anúncios, AdMob, conta/login, assinatura, cobrança no app ou sincronização em nuvem. Caso uma versão futura introduza qualquer um desses recursos, esta política e a declaração de Segurança dos dados do Google Play serão atualizadas antes da distribuição.</p>
+    <p>O Select Anywhere usa o Google AdMob apenas em telas pertencentes ao próprio Select Anywhere, como a interface de Histórico local. Anúncios nunca são colocados na camada temporária de captura/seleção exibida sobre outro aplicativo, e o texto selecionado nunca é enviado ao AdMob nem usado como entrada de segmentação publicitária.</p>
+    <p>Quando necessário, o Select Anywhere usa a Google UMP para solicitar ou gerenciar consentimento de publicidade. Se o Google indicar que um ponto de entrada de opções de privacidade é obrigatório, o Select Anywhere o disponibiliza em Ajustes para que você possa revisar ou alterar suas escolhas posteriormente.</p>
+    <p>O Select Anywhere não possui conta/login, assinatura ou cobrança no app nem sincronização em nuvem nesta versão.</p>
 
     <h2>7. Backup</h2>
-    <p>O backup automático do Android está desativado no Select Anywhere 0.1.0. O Histórico é tratado como dado local do dispositivo.</p>
+    <p>O backup automático do Android está desativado no Select Anywhere 0.1.1. O Histórico é tratado como dado local do dispositivo.</p>
 
     <h2>8. Área de transferência e abertura de links</h2>
     <p>Quando você escolhe Copiar, o texto selecionado é colocado na área de transferência do Android. O comportamento da área de transferência é controlado pelo Android e pode disponibilizar o conteúdo copiado a outros aplicativos conforme as regras da versão instalada.</p>
