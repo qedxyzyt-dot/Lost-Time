@@ -16,7 +16,7 @@ a{color:#245fd7}.meta{color:#5f6368}hr{border:0;border-top:1px solid #dadce0;mar
 </head>
 <body><main><article>
 <h1>Better Notifications — Privacy Policy</h1>
-<p class="meta"><strong>Effective date:</strong> August 27, 2026</p>
+<p class="meta"><strong>Effective date:</strong> August 31, 2026</p>
 <p>Better Notifications is an Android utility published by the Better Notifications / qedxyz project. It adds temporary edge-light effects when eligible Android notifications arrive. The app is designed around local processing and data minimization.</p>
 
 <h2>Information the app accesses</h2>
@@ -37,7 +37,7 @@ a{color:#245fd7}.meta{color:#5f6368}hr{border:0;border-top:1px solid #dadce0;mar
 <p>The current core feature does not use an Accessibility Service, location, microphone, contacts, camera, media/storage access, screen capture/MediaProjection, Full Screen Intent, broad installed-app visibility (QUERY_ALL_PACKAGES), or a wake lock for the edge-lighting path.</p>
 
 <h2>Screen-off behavior</h2>
-<p>The optional screen-off/AOD setting is off by default. Compatibility varies by Android device and manufacturer. On some devices, Android or the manufacturer may briefly light the display when the temporary overlay is added, which may increase battery use. Better Notifications does not use a wake lock or full-screen activity to force the display on.</p>
+<p>The optional screen-off/AOD setting is off by default. When enabled and an eligible notification arrives while the display is non-interactive, Better Notifications may briefly activate the locked display and host the temporary edge effect in a non-exported Activity that uses Android's public lock-screen APIs. The default Glow only presentation paints the non-edge surface black and shows only the configured edge animation; an optional Wake lock screen presentation leaves the normal lock screen visible behind the glow. The Activity does not dismiss keyguard and does not display notification content. Compatibility varies by Android device and manufacturer, and activating the display may increase battery use. Better Notifications does not use a wake lock, Full Screen Intent, or AccessibilityService for this visual path.</p>
 
 <h2>Security</h2>
 <p>Better Notifications minimizes sensitive-data handling by keeping visual processing on-device and by not transmitting notification content. The cross-app overlay is intentionally touch-through and non-focusable.</p>
@@ -53,7 +53,7 @@ a{color:#245fd7}.meta{color:#5f6368}hr{border:0;border-top:1px solid #dadce0;mar
 
 <hr>
 <h1 lang="pt-BR">Better Notifications — Política de Privacidade</h1>
-<p class="meta" lang="pt-BR"><strong>Data de vigência:</strong> 27 de agosto de 2026</p>
+<p class="meta" lang="pt-BR"><strong>Data de vigência:</strong> 31 de agosto de 2026</p>
 <div lang="pt-BR">
 <p>O Better Notifications é um utilitário Android publicado pelo projeto Better Notifications / qedxyz. Ele acrescenta efeitos temporários de iluminação de borda quando notificações Android elegíveis chegam. O aplicativo foi projetado com processamento local e minimização de dados.</p>
 
@@ -75,7 +75,7 @@ a{color:#245fd7}.meta{color:#5f6368}hr{border:0;border-top:1px solid #dadce0;mar
 <p>O recurso principal atual não usa Serviço de Acessibilidade, localização, microfone, contatos, câmera, acesso a mídia/armazenamento, captura de tela/MediaProjection, Full Screen Intent, visibilidade ampla de aplicativos instalados (QUERY_ALL_PACKAGES) nem wake lock para o caminho de iluminação de borda.</p>
 
 <h2>Funcionamento com a tela apagada</h2>
-<p>A opção de tela apagada/AOD vem desativada por padrão. A compatibilidade varia conforme o aparelho e o fabricante. Em alguns dispositivos, o Android ou o fabricante pode acender a tela brevemente quando o overlay temporário é adicionado, o que pode aumentar o consumo de bateria. O Better Notifications não usa wake lock nem Activity em tela cheia para forçar a tela a acender.</p>
+<p>A opção de tela apagada/AOD vem desativada por padrão. Quando habilitada e uma notificação elegível chega com a tela não interativa, o Better Notifications pode ativar brevemente o display bloqueado e hospedar o efeito temporário de borda em uma Activity não exportada que usa as APIs públicas de tela bloqueada do Android. No modo padrão Somente glow, a superfície fora da borda fica preta e apenas a animação configurada é exibida; no modo opcional Acender tela de bloqueio, a tela de bloqueio normal permanece visível atrás do glow. A Activity não dispensa a tela de bloqueio e não exibe o conteúdo da notificação. A compatibilidade varia conforme o aparelho e o fabricante, e ativar o display pode aumentar o consumo de bateria. O Better Notifications não usa wake lock, Full Screen Intent nem AccessibilityService nesse caminho visual.</p>
 
 <h2>Segurança</h2>
 <p>O Better Notifications minimiza o tratamento de dados sensíveis mantendo o processamento visual no dispositivo e não transmitindo o conteúdo das notificações. O overlay entre aplicativos é intencionalmente transparente a toques e não recebe foco.</p>
